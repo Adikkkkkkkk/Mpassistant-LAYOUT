@@ -1,0 +1,295 @@
+//main: ../style.less
+
+.prices {
+	padding: 100px 0 70px;
+}
+
+.prices__title {
+	margin-bottom: 50px;
+}
+
+.prices__box {
+	display: grid;
+	gap: 40px;
+}
+
+.prices__months {
+	display: flex;
+	gap: 40px;
+}
+
+.prices__month {
+	cursor: pointer;
+	border-radius: 30px;
+	width: 234px;
+	height: 42px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #dbe1e9;
+	text-align: center;
+	font-size: 18px;
+	color: #212121;
+	font-weight: 500;
+	line-height: 125%; /* 22.5px */
+	transition: border 0.3s ease;
+	&:hover {
+		border: 1px solid #999ea3;
+	}
+	&--active {
+		border: 0;
+		background: #11ae88;
+		color: #fff;
+		&:hover {
+			border: 0;
+		}
+	}
+}
+
+.prices__rates {
+	display: flex;
+	gap: 40px;
+}
+
+.prices__rate {
+	width: 50%;
+	height: 351px;
+	border-radius: 10px;
+	background: #fff;
+	padding: 50px 40px 50px 40px;
+	box-shadow: 0px 0px 30px 0px rgba(46, 184, 151, 0.15);
+	position: relative;
+	transition: box-shadow 0.3s ease;
+
+	&_middle {
+		background-color: rgba(42, 132, 238, 0.1);
+
+		&::after {
+			content: '-10%';
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 51px;
+			width: 96px;
+			border-radius: 0px 10px;
+			background: #2a84ee;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			color: #fff;
+			font-size: 20px;
+			font-weight: 600;
+			line-height: 125%; /* 25px */
+			letter-spacing: 0.4px;
+		}
+	}
+
+	&_high {
+		background-color: rgba(17, 174, 136, 0.1);
+		&::after {
+			content: '-15%';
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 51px;
+			width: 96px;
+			border-radius: 0px 10px;
+			background: #2a84ee;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			color: #fff;
+			font-size: 20px;
+			font-weight: 600;
+			line-height: 125%; /* 25px */
+			letter-spacing: 0.4px;
+		}
+	}
+
+	&:hover {
+		box-shadow: 0px 0px 30px 5px rgba(46, 184, 151, 0.15);
+	}
+}
+
+.prices__rate-title {
+	color: #212121;
+	font-size: 26px;
+	font-weight: 600;
+	line-height: 125%; /* 32.5px */
+	letter-spacing: 0.52px;
+
+	margin-bottom: 60px;
+}
+
+.prices__rate-buttons {
+	display: grid;
+	gap: 21px;
+}
+
+.prices__rate-price {
+	width: 290px;
+	color: #2a84ee;
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 125%; /* 37.5px */
+	letter-spacing: 0.6px;
+	margin-bottom: 30px;
+	position: relative;
+
+	&_middle {
+		&::before {
+			content: '4 491 ₽/мес';
+			position: absolute;
+			top: 0;
+			transform: translateY(-100%);
+			color: #6c778e;
+			font-size: 22px;
+			font-weight: 400;
+			line-height: 125%; /* 27.5px */
+			letter-spacing: 0.44px;
+		}
+	}
+	&_high {
+		&::before {
+			content: '4 241 ₽/мес';
+			position: absolute;
+			top: 0;
+			transform: translateY(-100%);
+			color: #6c778e;
+			font-size: 22px;
+			font-weight: 400;
+			line-height: 125%; /* 27.5px */
+			letter-spacing: 0.44px;
+		}
+	}
+}
+
+.prices__btn-wrapper {
+	width: 100%;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 30px;
+	background: #11ae88;
+	&::after {
+		content: 'Попробовать';
+		position: absolute;
+		color: #fff;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 125%; /* 22.5px */
+		letter-spacing: 0.36px;
+	}
+}
+
+.prices__btn {
+	width: 100%;
+	height: 48px;
+	border-radius: 30px;
+	background: linear-gradient(91deg, #11ae88 5.69%, #2a84ee 169.72%), #11ae88;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: #fff;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 125%; /* 22.5px */
+	letter-spacing: 0.36px;
+	position: relative;
+	z-index: 2;
+	opacity: 1;
+
+	transition: opacity 0.4s ease;
+	&:hover {
+		opacity: 0;
+	}
+
+	&_more {
+		background: none;
+		border: 1px solid #11ae88;
+		color: #212121;
+		display: flex;
+		gap: 6px;
+
+		.prices__icon {
+			transition: filter 0.2s ease;
+		}
+
+		transition: background 0.4s ease, color 0.2s ease;
+
+		&:hover {
+			background: #11ae88;
+			opacity: 1;
+			color: #fff;
+
+			.prices__icon {
+				filter: brightness(5);
+			}
+		}
+	}
+}
+
+.prices__beginner {
+	margin-top: 30px;
+	width: 100%;
+	padding: 35px 41px 35px;
+	border-radius: 10px;
+	background: linear-gradient(87deg, #fff1d7 0%, #ffb57f 100%);
+	position: relative;
+
+	.prices__rate-buttons {
+		width: 427px;
+	}
+}
+
+.prices__beginner-title {
+	color: #212121;
+	font-size: 26px;
+	font-weight: 600;
+	line-height: 125%; /* 32.5px */
+	letter-spacing: 0.52px;
+	width: 507px;
+	margin-bottom: 23px;
+}
+
+.prices__beginner-supprice {
+	width: 290px;
+	color: #6c778e;
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 125%; /* 27.5px */
+	letter-spacing: 0.44px;
+	margin-bottom: 14px;
+}
+
+.prices__beginner-price {
+	color: #2a84ee;
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 125%; /* 37.5px */
+	letter-spacing: 0.6px;
+	margin-bottom: 32px;
+}
+
+.prices__img {
+	position: absolute;
+
+	&-girl {
+		top: -97px;
+		right: 166px;
+	}
+	&-gift {
+		top: 68px;
+		right: 708px;
+	}
+	&-gift-blured {
+		top: 55px;
+		right: -60px;
+	}
+}

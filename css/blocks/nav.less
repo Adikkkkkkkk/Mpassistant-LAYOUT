@@ -1,0 +1,149 @@
+//main: ../style.less
+
+.nav {
+	padding: 25px 0 0;
+
+	.nav__row {
+		display: flex;
+		justify-content: space-between;
+
+		// NAV LOGO
+		.nav__logo {
+			display: flex;
+			gap: 31px;
+			align-items: center;
+			margin-right: 60px;
+
+			& img {
+				width: 260px;
+				height: 25px;
+			}
+
+			.logo__text {
+				max-width: 220px;
+				font-size: 14px;
+				font-weight: 400;
+				color: #969eb1;
+				line-height: 125%; /* 17.5px */
+
+				.wildberries {
+					font-weight: 700;
+					color: #702a8a;
+				}
+				.ozon {
+					font-weight: 700;
+					color: #1065ff;
+				}
+			}
+		}
+
+		// NAV LIST
+		.nav__list {
+			display: flex;
+			gap: 34px;
+			align-items: center;
+			position: relative;
+			z-index: 3;
+			margin-right: 217px;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 50%;
+				z-index: 1;
+				filter: blur(150px);
+				transform: translate(-50%, -50% - 33px);
+				width: 401px;
+				height: 401px;
+				background: radial-gradient(
+					50% 50% at 50% 50%,
+					#2a84ee 0%,
+					rgba(42, 132, 238, 0) 100%
+				);
+				pointer-events: none;
+			}
+
+			.list__item a {
+				font-weight: 400;
+				font-size: 18px;
+				color: #212121;
+
+				transition: color 0.3s ease;
+				&:hover {
+					color: #11ae88;
+				}
+			}
+		}
+
+		// NAV BTNS
+		.nav__btns {
+			display: flex;
+			align-items: center;
+			font-size: 18px;
+			gap: 30px;
+
+			.nav__log-in {
+				display: flex;
+				align-items: center;
+				gap: 9px;
+				color: #212121;
+
+				transition: color 0.3s ease;
+				&:hover {
+					color: #11ae88;
+				}
+			}
+
+			.nav__sign-up {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 257px;
+				height: 42px;
+				position: relative;
+				cursor: pointer;
+
+				&-gradient {
+					background: linear-gradient(91deg, #11ae88 5.69%, #2a84ee 169.72%);
+					width: 257px;
+					height: 42px;
+					border-radius: 30px;
+
+					position: absolute;
+					top: 0;
+					left: 4;
+					z-index: 1;
+				}
+
+				&-hover {
+					background: #11ae88;
+					width: 257px;
+					height: 42px;
+					border-radius: 30px;
+
+					position: absolute;
+					top: 0;
+					left: 4;
+					z-index: 2;
+					opacity: 0;
+
+					transition: opacity 0.4s ease;
+				}
+
+				&:hover .nav__sign-up-hover {
+					opacity: 1;
+				}
+
+				& a {
+					color: #fff;
+					z-index: 3;
+				}
+			}
+
+			.entrance-icon {
+				transform: translateY(1.5px);
+			}
+		}
+	}
+}

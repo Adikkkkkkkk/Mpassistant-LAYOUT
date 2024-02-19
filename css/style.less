@@ -1,0 +1,55 @@
+//compress: true
+@import 'reset';
+@import 'reusable';
+// BLOCKS IMPORTS
+@import 'blocks/nav';
+@import 'blocks/hero';
+@import 'blocks/cta';
+@import 'blocks/statistics';
+@import 'blocks/services';
+@import 'blocks/reports';
+@import 'blocks/features';
+@import 'blocks/prices';
+@import 'blocks/reviews';
+@import 'blocks/questions';
+@import 'blocks/footer';
+// ELEMENTS IMPORTS
+@import 'elements/modal';
+
+// Шрифты
+@font-face {
+	font-weight: 400;
+	font-family: 'NT Somic';
+	src: url('fonts/NTSomic-Regular.ttf');
+}
+@font-face {
+	font-weight: 500;
+	font-family: 'NT Somic';
+	src: url('fonts/NTSomic-Medium.ttf');
+}
+@font-face {
+	font-weight: 700;
+	font-family: 'NT Somic';
+	src: url('fonts/NTSomic-Bold.ttf');
+}
+
+body {
+	font-family: 'NT Somic', sans-serif;
+	font-weight: 700;
+}
+
+.none {
+	display: none;
+}
+
+.container {
+	// 1600 + padding 15right	+	5left
+	max-width: 1630px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.no-scroll {
+	overflow-y: hidden;
+}
